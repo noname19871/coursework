@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import config
 import telebot
+import os
 
-bot = telebot.TeleBot(config.token)
+token = os.environ['BOT_TOKEN']
+bot = telebot.TeleBot(token)
 
 
 @bot.message_handler(content_types=["text"])
