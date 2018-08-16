@@ -8,6 +8,7 @@ bot = telebot.TeleBot(token)
 
 admins = bot.get_chat_administrators()
 
+
 @bot.message_handler(commands=['start'])
 def start(message):
     if message.from_user.id in admins:
@@ -16,9 +17,9 @@ def start(message):
         bot.send_message(message.chat.id, 'ты не админ')
 
 
-@bot.message_handler(content_types=["text"])
-def repeat_all_messages(message): 
-    bot.send_message(message.chat.id, message.text)
+# @bot.message_handler(content_types=["text"])
+# def repeat_all_messages(message):
+#    bot.send_message(message.chat.id, message.text)
 
 
 if __name__ == '__main__':
